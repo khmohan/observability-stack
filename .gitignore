@@ -1,0 +1,4 @@
+# Ignore logs, temp files, and Kubernetes secrets
+*.log
+*.tmp
+secrets.yaml
