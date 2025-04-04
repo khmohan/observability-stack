@@ -26,7 +26,7 @@ Welcome to **Atlan Observability Challenge 2025**! This repository provides an *
 Start by cloning the repo to your local machine:
 
 ```bash
-git clone https://github.com/khmohan/khmohan-observability.git
+git clone https://github.com/khmohan/observability-stack.git
 cd khmohan-observability
 ```
 
