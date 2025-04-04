@@ -1,108 +1,109 @@
-# 🌟 Observability Stack - Atlan Challenge 2025 🚀  
+# 🌟 **Atlan Observability Challenge 2025 - Monitoring Stack 🚀**
 
-**A Kubernetes-based observability solution using Prometheus, Grafana, Loki, OpenTelemetry, and Alertmanager.**  
+---
 
-## 📌 Overview  
-Welcome to the **Observability Stack** for the **Atlan Challenge 2025!** This repository provides a **comprehensive monitoring solution** for tracking API performance, logs, and traces in real time.  
+## **📝 About the Project:**
 
-✅ **Key Benefits:**  
-✔️ **Real-time monitoring** with Prometheus  
-✔️ **Powerful dashboards** using Grafana  
-✔️ **Centralized log aggregation** via Loki  
-✔️ **Distributed tracing** using OpenTelemetry  
-✔️ **Alerting system** with Alertmanager  
-🔧 **Fully containerized & deployed on Kubernetes!**  
+Welcome to **Atlan Observability Challenge 2025**! This repository provides an **end-to-end Kubernetes-based observability stack** built using **Prometheus**, **Grafana**, and **Alertmanager** to monitor and visualize **REST API performance** in real-time. With **automated deployment**, **pre-configured dashboards**, and **alerting mechanisms**, it's easy to stay on top of your system's health and performance!
 
-## 🚀 Features  
-📊 **Metrics Collection** - Prometheus collects real-time system & application metrics.  
-🖥️ **Grafana Dashboards** - Pre-built dashboards for easy visualization of logs and metrics.  
-🛡️ **Loki Log Aggregation** - Centralized log collection across microservices.  
-🔗 **OpenTelemetry Tracing** - Distributed tracing for debugging performance issues.  
-⚙️ **Kubernetes-Based Deployment** - Easily deployable on a Kubernetes cluster.  
-🚨 **Alertmanager Notifications** - Get alerts for critical system failures.  
+> 🚀 **Deploy and monitor your API stack effortlessly!**
 
-## ⚡ Quick Start Guide  
-Clone the Repository  
+---
+
+## **🔧 Features:**
+
+- **🔍 API Monitoring with Prometheus**: Collect metrics from your APIs and monitor system performance.
+- **📊 Grafana Dashboards**: Visualize the data with beautiful, customizable Grafana dashboards.
+- **🚨 Real-time Alerts with Alertmanager**: Get notified instantly when performance issues are detected.
+- **⚙️ Automated Kubernetes Deployment**: Easy deployment using Kubernetes manifests.
+
+---
+
+## **🚀 Quick Start Guide:**
+
+### **1️⃣ Clone the Repository**
+
+Start by cloning the repo to your local machine:
+
 ```bash
-git clone https://github.com/khmohan/observability-stack.git
-cd observability-stack
-Deploy the Observability Stack
+git clone https://github.com/khmohan/khmohan-observability.git
+cd khmohan-observability
+```
 
-bash
-Copy
-Edit
+### **2️⃣ Deploy the Monitoring Stack**
+
+Next, deploy the full stack (Prometheus, Grafana, Alertmanager) using Kubernetes manifests:
+
+```bash
 kubectl apply -f manifests/
-This deploys Prometheus, Grafana, Loki, OpenTelemetry, and Alertmanager inside the monitoring namespace.
+```
 
-Access Prometheus (Metrics Collection)
+This command will apply all necessary Kubernetes configurations and deploy the monitoring stack.
 
-bash
-Copy
-Edit
+### **3️⃣ Access the Prometheus Dashboard**
+
+To access the Prometheus UI, run the following port-forward command:
+
+```bash
 kubectl port-forward svc/prometheus 9090:9090 -n monitoring
-🔗 Open http://localhost:9090 in your browser.
+```
 
-Access Grafana (Visual Dashboards)
+Then, open [http://localhost:9090](http://localhost:9090) in your browser and navigate to the **Targets** section to ensure your API is being scraped.
 
-bash
-Copy
-Edit
+### **4️⃣ Access the Grafana Dashboard**
+
+To access the Grafana UI, run the following command:
+
+```bash
 kubectl port-forward svc/grafana 3000:3000 -n monitoring
-🔗 Open http://localhost:3000
+```
 
-Default Login Credentials:
+Then, visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-Username: admin
+**Default Login Credentials:**
+- **Username**: `admin`
+- **Password**: `admin`
 
-Password: admin (or check the Kubernetes Secret)
+### **5️⃣ Test Alerts in Alertmanager**
 
-View Logs in Loki
+To verify the Alertmanager configuration, run:
 
-bash
-Copy
-Edit
-kubectl port-forward svc/loki 3100:3100 -n monitoring
-🔍 Query logs directly in Grafana after adding Loki as a data source.
-
-Monitor Traces with OpenTelemetry
-
-bash
-Copy
-Edit
-kubectl port-forward svc/opentelemetry 4317:4317 -n monitoring
-🔗 Configure your applications to send traces to the OpenTelemetry Collector.
-
-Check Alerts in Alertmanager
-
-bash
-Copy
-Edit
+```bash
 kubectl port-forward svc/alertmanager 9093:9093 -n monitoring
-🔗 Open http://localhost:9093 to check active alerts.
+```
 
-📜 Project Structure
-graphql
-Copy
-Edit
-📂 observability-stack/
-├── 📂 manifests/          # Kubernetes YAML manifests for deployment
-├── 📂 dashboards/         # Grafana JSON dashboard configurations
-├── 📂 configs/            # Configuration files for Prometheus, Loki, Alertmanager
-├── 📄 README.md           # Project documentation
-└── 📄 LICENSE             # License details
-📌 High-Level System Diagram
+Then, open [http://localhost:9093](http://localhost:9093) and check for any active alerts.
 
-(Replace path/to/high-level-diagram.png with the actual path in your repo.)
+---
 
-💪 Contributions & Improvements
-🚀 Contributions are welcome! If you find any issues or have ideas to enhance this observability stack, fork the repository and submit a pull request.
+## **💡 Additional Resources:**
 
-📚 Documentation & Resources
-📖 Prometheus Docs
-📖 Grafana Docs
-📖 Loki Docs
-📖 OpenTelemetry Docs
-📖 Kubernetes Docs
+- **Grafana Dashboards**: Pre-configured dashboards are available for importing into Grafana.
+- **Prometheus Metrics**: Explore the collected metrics in real-time and ensure API health.
+- **Alertmanager Setup**: Check active alerts and monitor your system's health status.
+
+---
+
+## **💬 Contribute & Improve:**
+
+We welcome contributions to improve the observability stack! If you find bugs or have suggestions, feel free to fork the repository and create a pull request. Your contributions are highly appreciated!
+
+---
+
+## **🔍 Final Notes:**
+
+This repository has everything you need to get up and running with **Prometheus, Grafana, and Alertmanager** to monitor your **REST API performance**. It's easy to set up, flexible, and ready to be used for any microservices-based infrastructure.
+
+Stay ahead of the game with proactive monitoring and alerts! 🚀
+
+---
+
+## **📚 Documentation & Resources:**
+
+- [Prometheus Documentation](https://prometheus.io/docs/)
+- [Grafana Documentation](https://grafana.com/docs/)
+- [Alertmanager Documentation](https://prometheus.io/docs/alerting/latest/alertmanager/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
 
 
 
